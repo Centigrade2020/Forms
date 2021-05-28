@@ -1,0 +1,18 @@
+User Creation:
+    Firebase authentication using email/gmail
+    Store userdata in firestore
+    
+    userdata = {
+        name:   ""  // string
+        uid:    ""  // string UNIQUE
+        forms:  []  // list
+        avatar: ""  // string
+    }
+
+Form Creation:
+    User directory to store forms
+
+.
+.
+.
+.
