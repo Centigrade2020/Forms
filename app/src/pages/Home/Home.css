@@ -7,8 +7,8 @@
 }
 
 .template {
-  width: 180px;
-  height: 140px;
+  width: 160px;
+  height: 120px;
   margin: 0 20px;
   background-color: var(--dark2);
   border: 1px solid var(--dark);
@@ -17,19 +17,6 @@
 
 .template:hover {
   border: 1px solid var(--primary);
-}
-
-.plus {
-  width: 20px;
-  height: 20px;
-  position: relative;
-}
-
-.plus > * {
-  width: 30px;
-  height: 8px;
-  background-color: var(--primary);
-  position: absolute;
 }
 
 .create-form {

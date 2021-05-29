@@ -6,7 +6,7 @@ function Home() {
     <div className="Home">
       <div className="templates-container">
         <div className="create-form template">
-          <Plus />
+          <Plus fill="#66fcf1" size="32" />
         </div>
         <div className="template1 template"></div>
         <div className="template2 template"></div>
