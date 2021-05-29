@@ -1,0 +1,13 @@
+.nav-container {
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10vh;
+  position: sticky;
+  background-color: var(--dark);
+}
+
+.logo {
+  color: var(--primary);
+}

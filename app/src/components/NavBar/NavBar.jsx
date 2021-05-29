@@ -1,8 +1,16 @@
+import "../../styles/NavBar.css";
+
 function NavBar() {
   return (
-    <div className="NavBar">
+    <div className="nav-container">
       <nav>
-        <div className="logo">Forms</div>
+        <h1 className="logo">Forms</h1>
+        <div className="profile">
+          <div className="profile-name"></div>
+          <div className="profile-pic-container">
+            <img src="" alt="" />
+          </div>
+        </div>
       </nav>
     </div>
   );
