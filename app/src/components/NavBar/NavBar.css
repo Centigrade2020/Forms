@@ -10,7 +10,7 @@
 
 nav {
   width: 80%;
-  height: 100%;
+  height: inherit;
   margin: auto;
   display: flex;
   align-items: center;
@@ -37,14 +37,6 @@ nav {
 
 .profile .profile-name {
   color: var(--light);
-}
-
-.profile .profile-pic-container {
-  width: 50px;
-  height: 50px;
-  background-color: var(--light);
-  border-radius: 50%;
-  overflow: hidden;
-  display: flex;
-  margin-left: 20px;
+  margin-right: 10px;
+  margin-top: 10px;
 }
