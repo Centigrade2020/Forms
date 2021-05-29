@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
+  color: white;
 }
 
 :root {
@@ -13,6 +14,8 @@
   --dark2: #1b232c;
   --light: #c5c6c7;
   --light2: #c5c6c744;
+  --white: #fff;
+  --black: #000;
 }
 
 body {
