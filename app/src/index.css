@@ -12,4 +12,11 @@
   --dark: #0b0c10;
   --dark2: #1b232c;
   --light: #c5c6c7;
+  --light2: #c5c6c744;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--dark);
 }

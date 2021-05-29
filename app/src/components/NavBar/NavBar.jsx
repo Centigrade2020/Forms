@@ -6,12 +6,13 @@ function NavBar() {
       <nav>
         <h1 className="logo">Forms</h1>
         <div className="profile">
-          <div className="profile-name"></div>
+          <p className="profile-name">Your Name</p>
           <div className="profile-pic-container">
             <img src="" alt="" />
           </div>
         </div>
       </nav>
+      <div className="line"></div>
     </div>
   );
 }
