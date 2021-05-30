@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
-  color: white;
+  color: var(--light);
 }
 
 :root {
@@ -25,53 +25,55 @@ body {
 }
 
 h1 {
-  width: 35%;
-  border-left: 3px solid var(--primary2);
-  border-right: 3px solid var(--primary2);
-  border-bottom: 3px solid var(--primary2);
+  padding: 20px 0;
+  text-align: center;
   border-radius: 15px;
   color: var(--primary);
-  margin-top: 70px;
-  margin-left: 400px;
-  padding-left: 120px;
 }
 
-.fields {
-  width: 50%;
-  height: fit-content;
-  border-radius: 5px;
+.field {
+  width: 720px;
+  padding: 20px;
+  margin: 20px auto;
   display: flex;
   flex-direction: column;
   background-color: var(--dark2);
-  margin-top: 30px;
-  margin-left: 350px;
 }
 
-#question_field {
-  float: left;
-  background-color: var(--dark2);
-  width: 35%;
-  margin: 15px 0 0 30px;
-  border: none;
-  font-size: 1.2em;
+p {
+  font-size: 1.2rem;
+
+  margin-bottom: 20px;
 }
-#answer_input {
+
+input[type="text"] {
   outline: none;
-  background-color: var(--dark2);
-  width: 40%;
+  background-color: transparent;
   border: none;
-  border-bottom: 2px solid var(--light);
-  margin: 40px 0 0 30px;
+  border-bottom: 1px solid var(--light);
+  padding: 10px;
+  font-size: 1rem;
+  transform: translateY(-10px);
 }
 
-#dropdown {
+input[type="text"]:focus {
+  border-bottom: 1px solid var(--primary);
+}
+
+label {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+label > input {
+  margin-right: 10px;
+}
+
+.dropdown {
   width: 30%;
-  margin-left: 30px;
   outline: none;
-  margin-top: 15px;
   background-color: var(--dark2);
-  /* border: none;
-  border-bottom: 2px solid var(--light); */
   color: var(--primary);
 }
 
@@ -84,6 +86,11 @@ h1 {
 }
 
 input[type="radio"] {
-  margin-top: 15px;
-  margin-left: 30px;
+}
+
+.line {
+  width: 90%;
+  margin: auto;
+  height: 1px;
+  background-color: var(--light2);
 }

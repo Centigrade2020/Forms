@@ -5,42 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
-    <title>Centigarde Forms</title>
+    <title>Centigrade Forms</title>
   </head>
   <body>
-    <div class="generatedForm">
-      <h1>Centigrade Form</h1>
-      <div class="fields">
-        <input type="text" id="question_field" value="How are you " readonly />
+    <header>
+      <h1>Form Name</h1>
+      <div class="line"></div>
+    </header>
+
+    <section>
+      <div class="field">
+        <p>How are you?</p>
         <input
           type="text"
-          id="answer_input"
+          class="answer-input"
           placeholder="Your Answer"
           autocomplete="off"
         />
-        <br />
       </div>
-      <div class="fields">
-        <input type="text" id="question_field" value="How are you " readonly />
-        <label>
-          <input type="radio" name="radio" value="True" />True
-          <span></span>
-        </label>
-        <label>
-          <input type="radio" name="radio" value="false" />False
-          <span></span>
-        </label>
-        <br />
+
+      <div class="field">
+        <p>Are you fine?</p>
+        <label><input type="radio" name="radio" value="Yes" />Yes</label>
+        <label><input type="radio" name="radio" value="No" />No</label>
       </div>
-      <div class="fields">
-        <input type="text" id="question_field" value="How are you " readonly />
-        <select name="dropdown" id="dropdown">
-          <option value="hrihtik">text</option>
-          <option value="0">Drop</option>
-          <option value="1">poda</option>
+
+      <div class="field">
+        <p>How fo you feel?</p>
+        <select name="dropdown" class="dropdown">
+          <option value="Good">Good</option>
+          <option value="Better">Better</option>
+          <option value="Best">Best</option>
         </select>
-        <br />
       </div>
-    </div>
+    </section>
+
+    <!-- <footer>
+      <div class="line"></div>
+      <h1>Forms</h1>
+    </footer> -->
   </body>
 </html>
