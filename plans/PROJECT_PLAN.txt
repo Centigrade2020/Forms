@@ -16,3 +16,12 @@ Form Creation:
 .
 .
 .
+Working
+
+. User needs to register/login
+. Form saves dynamically
+. Create forms gets data from user and creates dynamically 
+. Every forms gets unique id and creates unique html
+. Id and html deletes automatically
+. Url hashes
+. Url struct : www.xyz.com/hashed_uid/form_id.html

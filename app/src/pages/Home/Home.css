@@ -24,3 +24,21 @@
   align-items: center;
   justify-content: center;
 }
+
+.my-forms {
+  width: 60%;
+  margin: 5vh auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.form {
+  width: 160px;
+  height: 120px;
+  margin: 20px;
+  background-color: var(--dark2);
+  border: 1px solid var(--dark);
+  transition: border 200ms ease-in-out;
+}
