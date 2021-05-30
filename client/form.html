@@ -8,41 +8,38 @@
     <title>Centigrade Forms</title>
   </head>
   <body>
-    <header>
-      <h1>Form Name</h1>
+    <div class="page">
+      <header>
+        <h1>Form Name</h1>
+        <div class="line"></div>
+      </header>
+
+      <section>
+        <div class="field">
+          <p>How are you ?</p>
+          <input type="text" placeholder="Your answer" autocomplete="off" />
+        </div>
+
+        <div class="field">
+          <p>Are you fine ?</p>
+          <label><input type="radio" name="radio" value="Yes" />Yes</label>
+          <label><input type="radio" name="radio" value="No" />No</label>
+        </div>
+
+        <div class="field">
+          <p>How fo you feel ?</p>
+          <select name="dropdown" class="dropdown">
+            <option value="Good">Good</option>
+            <option value="Better">Better</option>
+            <option value="Best">Best</option>
+          </select>
+        </div>
+      </section>
+    </div>
+
+    <footer>
       <div class="line"></div>
-    </header>
-
-    <section>
-      <div class="field">
-        <p>How are you?</p>
-        <input
-          type="text"
-          class="answer-input"
-          placeholder="Your Answer"
-          autocomplete="off"
-        />
-      </div>
-
-      <div class="field">
-        <p>Are you fine?</p>
-        <label><input type="radio" name="radio" value="Yes" />Yes</label>
-        <label><input type="radio" name="radio" value="No" />No</label>
-      </div>
-
-      <div class="field">
-        <p>How fo you feel?</p>
-        <select name="dropdown" class="dropdown">
-          <option value="Good">Good</option>
-          <option value="Better">Better</option>
-          <option value="Best">Best</option>
-        </select>
-      </div>
-    </section>
-
-    <!-- <footer>
-      <div class="line"></div>
-      <h1>Forms</h1>
-    </footer> -->
+      <p>Forms | <a href="#"> Create your own form</a></p>
+    </footer>
   </body>
 </html>
