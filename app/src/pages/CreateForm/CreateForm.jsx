@@ -7,6 +7,7 @@ function CreateForm() {
     <div className="CreateForm">
       <input type="text" className="form-name" placeholder="Form name" />
       <div className="fields">
+        <FormField />
         {/* <span>
           <input
             type="text"

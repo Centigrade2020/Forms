@@ -1,0 +1,24 @@
+.form-field {
+  margin: 20px 0;
+  background-color: var(--dark2);
+  padding: 15px;
+}
+
+.form-field .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-field .wrapper input {
+  padding: 10px;
+  width: 500px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--light);
+  outline: none;
+}
+
+.form-field .wrapper > input:focus {
+  border-bottom: 1px solid var(--primary);
+}
