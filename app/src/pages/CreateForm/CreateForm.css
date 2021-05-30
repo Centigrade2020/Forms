@@ -1,0 +1,66 @@
+#form_name {
+  outline: none;
+  background-color: var(--dark);
+  color: var(--dark2);
+  border: none;
+  border-bottom: 2px solid var(--primary);
+  margin-top: 50px;
+  margin-left: 100px;
+}
+
+#form_name::placeholder {
+  font-size: 1.3rem;
+}
+
+.fields {
+  width: 50%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--dark2);
+  margin-top: 30px;
+  margin-left: 100px;
+}
+span {
+  display: inline;
+}
+
+#question_field {
+  float: left;
+  background-color: var(--dark2);
+  width: 35%;
+  margin: 15px 0 0 30px;
+  border: none;
+  border-bottom: 2px solid var(--light);
+}
+
+#dropdown {
+  width: 20%;
+  float: right;
+  outline: none;
+  margin-top: 15px;
+  margin-right: 100px;
+  background-color: var(--dark2);
+  border: none;
+  border-bottom: 2px solid var(--light);
+  color: var(--primary);
+}
+
+#answer_input {
+  outline: none;
+  background-color: var(--dark2);
+  width: 30%;
+  border: none;
+  border-bottom: 2px solid var(--light);
+  margin: 40px 0 0 30px;
+}
+
+button {
+  width: 50%;
+  height: 33px;
+  margin-top: 30px;
+  margin-left: 100px;
+  background-color: var(--dark2);
+  border: none;
+  color: var(--primary);
+}
