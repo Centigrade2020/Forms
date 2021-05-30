@@ -5,3 +5,5 @@ const FormField = () => {
 
   return <div className="form-field">Field</div>;
 };
+
+export default FormField;

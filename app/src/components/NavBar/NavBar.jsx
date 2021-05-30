@@ -1,6 +1,6 @@
 import { useHistory } from "react-router-dom";
 import "./NavBar.css";
-import { Profile } from "../Symbols";
+import { Symbols } from "../Symbols";
 
 function NavBar() {
   const name = "Dharun";
@@ -19,7 +19,7 @@ function NavBar() {
         </h1>
         <div className="profile">
           <p className="profile-name">{name}</p>
-          <Profile fill="#c5c6c7" size="40" />
+          <Symbols.Profile fill="#c5c6c7" size="40" />
         </div>
       </nav>
       <div className="line"></div>

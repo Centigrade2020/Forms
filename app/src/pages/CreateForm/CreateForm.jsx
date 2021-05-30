@@ -1,5 +1,6 @@
 import "./CreateForm.css";
-import { Plus } from "../../components/Symbols";
+import { Symbols } from "../../components/Symbols";
+import { FormField } from "../../components/FormField";
 
 function CreateForm() {
   return (
@@ -22,7 +23,7 @@ function CreateForm() {
         <input type="text" id="answer_input" placeholder="Enter your answer" /> */}
       </div>
       <button className="add-field-button">
-        <Plus size="20" fill="#66fcf1" />
+        <Symbols.Plus size="20" fill="#66fcf1" />
         <span>Add field</span>
       </button>
     </div>

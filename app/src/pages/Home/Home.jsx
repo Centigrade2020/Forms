@@ -1,6 +1,6 @@
 import { useHistory } from "react-router-dom";
 import "./Home.css";
-import { Plus } from "../../components/Symbols";
+import { Symbols } from "../../components/Symbols";
 
 function Home() {
   const history = useHistory();
@@ -14,7 +14,7 @@ function Home() {
             history.push("/createform");
           }}
         >
-          <Plus fill="#66fcf1" size="32" />
+          <Symbols.Plus fill="#66fcf1" size="32" />
         </div>
         <div className="template1 template"></div>
         <div className="template2 template"></div>
