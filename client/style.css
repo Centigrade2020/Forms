@@ -132,3 +132,22 @@ footer .text > * {
   border-radius: 50%;
   background-color: var(--light2);
 }
+
+.radio {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid var(--primary);
+  margin-right: 10px;
+}
+
+label input {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+label input:checked ~ .radio {
+  background-color: var(--primary2);
+}
