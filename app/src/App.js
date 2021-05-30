@@ -5,13 +5,11 @@ import CreateForm from "./pages/CreateForm";
 
 function App() {
   return (
-    <>
+    <Router>
       <NavBar />
-      <Router>
-        <Route path="/" exact render={() => <Home />} />
-        <Route path="/createform" render={() => <CreateForm />} />
-      </Router>
-    </>
+      <Route path="/" exact render={() => <Home />} />
+      <Route path="/createform" render={() => <CreateForm />} />
+    </Router>
   );
 }
 
