@@ -1,18 +1,32 @@
-#form_name {
+.CreateForm {
+  width: 720px;
+  margin: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-name {
+  font-size: 2rem;
   outline: none;
-  background-color: var(--dark);
-  color: var(--dark2);
   border: none;
+  border-bottom: 2px solid var(--light2);
+  background: transparent;
+  padding: 10px;
+  color: var(--light);
+  font-weight: 500;
+  transition: border 200ms ease-in-out;
+}
+
+.form-name::placeholder {
+  color: var(--light2);
+}
+
+.form-name:focus {
   border-bottom: 2px solid var(--primary);
-  margin-top: 50px;
-  margin-left: 100px;
 }
 
-#form_name::placeholder {
-  font-size: 1.3rem;
-}
-
-.fields {
+/* .fields {
   width: 50%;
   height: 200px;
   display: flex;
@@ -53,14 +67,28 @@ span {
   border: none;
   border-bottom: 2px solid var(--light);
   margin: 40px 0 0 30px;
+} */
+
+.add-field-button {
+  background-color: var(--dark2);
+  padding: 15px;
+  border: 1px solid var(--dark2);
+  transition: border 200ms ease-in-out;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
-button {
-  width: 50%;
-  height: 33px;
-  margin-top: 30px;
-  margin-left: 100px;
-  background-color: var(--dark2);
-  border: none;
+.add-field-button > * {
+  margin: 0 5px;
   color: var(--primary);
+}
+.add-field-button:hover {
+  border: 1px solid var(--primary);
+}
+
+.add-field-button:active {
+  background-color: var(--dark);
 }
