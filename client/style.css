@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+
+:root {
+  --primary: #66fcf1;
+  --primary2: #45a29e;
+  --dark: #0b0c10;
+  --dark2: #1b232c;
+  --light: #c5c6c7;
+  --light2: #c5c6c730;
+  --white: #fff;
+  --black: #000;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--dark);
+}
+
+h1 {
+  width: 35%;
+  border-left: 3px solid var(--primary2);
+  border-right: 3px solid var(--primary2);
+  border-bottom: 3px solid var(--primary2);
+  border-radius: 15px;
+  color: var(--primary);
+  margin-top: 70px;
+  margin-left: 400px;
+  padding-left: 120px;
+}
+
+.fields {
+  width: 50%;
+  height: fit-content;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--dark2);
+  margin-top: 30px;
+  margin-left: 350px;
+}
+
+#question_field {
+  float: left;
+  background-color: var(--dark2);
+  width: 35%;
+  margin: 15px 0 0 30px;
+  border: none;
+  font-size: 1.2em;
+}
+#answer_input {
+  outline: none;
+  background-color: var(--dark2);
+  width: 40%;
+  border: none;
+  border-bottom: 2px solid var(--light);
+  margin: 40px 0 0 30px;
+}
+
+#dropdown {
+  width: 30%;
+  margin-left: 30px;
+  outline: none;
+  margin-top: 15px;
+  background-color: var(--dark2);
+  /* border: none;
+  border-bottom: 2px solid var(--light); */
+  color: var(--primary);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+}
+
+input[type="radio"] {
+  margin-top: 15px;
+  margin-left: 30px;
+}
