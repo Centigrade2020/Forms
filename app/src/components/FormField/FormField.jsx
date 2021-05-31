@@ -1,9 +1,9 @@
-import { useState } from "react";
+// import { useState } from "react";
 import Dropdown from "../Dropdown";
 import "./FormField.css";
 
 const FormField = () => {
-  const [formType, setFormType] = useState("text");
+  // const [formType, setFormType] = useState("text");
 
   return (
     <div className="form-field">

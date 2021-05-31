@@ -1,5 +1,5 @@
 import { useHistory } from "react-router-dom";
-import fb from "../../services/firebase";
+// import fb from "../../services/firebase";
 import Symbols from "../Symbols";
 import ProfileTab from "../ProfileTab";
 import "./NavBar.css";

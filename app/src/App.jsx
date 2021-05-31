@@ -1,10 +1,5 @@
-import { useEffect, useState } from "react";
-import {
-  HashRouter as Router,
-  Switch,
-  Route,
-  useHistory,
-} from "react-router-dom";
+import { useEffect } from "react";
+import { Switch, Route, useHistory } from "react-router-dom";
 import { useAuth, useResolved } from "./hooks";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
@@ -22,10 +17,6 @@ function App() {
       history.push(!!authUser ? "/" : "login");
     }
   }, [authResolved, authUser, history]);
-
-  useEffect(() => {
-    console.log(authUser, authResolved);
-  }, [authUser, authResolved]);
 
   return (
     <Switch>
