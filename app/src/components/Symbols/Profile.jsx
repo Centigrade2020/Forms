@@ -1,5 +1,3 @@
-import Home from "../../pages/Home/Home";
-
 const Profile = ({ fill, size }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
