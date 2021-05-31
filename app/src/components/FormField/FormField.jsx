@@ -9,7 +9,9 @@ const FormField = () => {
     <div className="form-field">
       <div className="wrapper">
         <input type="text" />
-        <Dropdown />
+        <Dropdown
+          options={["Text", "Multiple Choice", "Check Box", "Dropdown"]}
+        />
       </div>
     </div>
   );

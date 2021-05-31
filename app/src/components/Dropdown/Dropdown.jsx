@@ -2,8 +2,8 @@ import "./Dropdown.css";
 import { Symbols } from "../Symbols";
 import { useState } from "react";
 
-const Dropdown = () => {
-  const opts = ["Text", "Multiple Choice", "Check Box", "Dropdown"];
+const Dropdown = ({ options }) => {
+  const opts = options;
   const [selected, setSelected] = useState(opts[0]);
   return (
     <div className="Dropdown">
@@ -26,6 +26,9 @@ const Dropdown = () => {
               document
                 .getElementById("options")
                 .classList.toggle("options-active");
+              document
+                .getElementById("display")
+                .classList.toggle("display-active");
             }}
           >
             {i}
