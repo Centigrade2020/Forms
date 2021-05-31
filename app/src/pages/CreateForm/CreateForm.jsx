@@ -1,7 +1,7 @@
-import "./CreateForm.css";
-import { Symbols } from "../../components/Symbols";
-import { FormField } from "../../components/FormField";
 import { useState } from "react";
+import Symbols from "../../components/Symbols";
+import FormField from "../../components/FormField";
+import "./CreateForm.css";
 
 function CreateForm() {
   const AddedElement = () => (

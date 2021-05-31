@@ -1,0 +1,32 @@
+label {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+}
+
+.error-container {
+  height: 20px;
+}
+
+.error-container .error {
+  font-size: 0.8rem;
+  color: var(--error);
+}
+
+.auth-form-field {
+  color: var(--light);
+  outline: none;
+  border: 1px solid var(--dark2);
+  background-color: transparent;
+  padding: 12px;
+  font-weight: 100;
+  transition: border 200ms ease-in-out;
+}
+
+.auth-form-field::placeholder {
+  color: var(--light);
+}
+
+.auth-form-field:focus {
+  border: 1px solid var(--primary);
+}

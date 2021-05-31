@@ -1,6 +1,6 @@
-import "./Dropdown.css";
-import { Symbols } from "../Symbols";
 import { useState } from "react";
+import Symbols from "../Symbols";
+import "./Dropdown.css";
 
 const Dropdown = ({ options }) => {
   const opts = options;

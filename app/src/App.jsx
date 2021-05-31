@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -6,11 +6,11 @@ import {
   useHistory,
 } from "react-router-dom";
 import { useAuth, useResolved } from "./hooks";
-import { NavBar } from "./components/NavBar";
 import Home from "./pages/Home";
-import CreateForm from "./pages/CreateForm";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import CreateForm from "./pages/CreateForm";
+import NavBar from "./components/NavBar";
 
 function App() {
   const history = useHistory();
@@ -29,12 +29,14 @@ function App() {
 
   return (
     <Router>
-      <NavBar />
       <Switch>
-        <Route exact path="/" component={Home} />
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
-        <Route path="/user/createform" component={CreateForm} />
+        <>
+          <NavBar />
+          <Route exact path="/" component={Home} />
+          <Route path="/user/createform" component={CreateForm} />
+        </>
       </Switch>
     </Router>
   );

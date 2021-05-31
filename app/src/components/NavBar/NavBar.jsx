@@ -1,6 +1,6 @@
 import { useHistory } from "react-router-dom";
+import Symbols from "../Symbols";
 import "./NavBar.css";
-import { Symbols } from "../Symbols";
 
 function NavBar() {
   const name = "Dharun";

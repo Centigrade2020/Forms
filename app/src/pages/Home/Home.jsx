@@ -1,6 +1,6 @@
 import { useHistory } from "react-router-dom";
+import Symbols from "../../components/Symbols";
 import "./Home.css";
-import { Symbols } from "../../components/Symbols";
 
 function Home() {
   const history = useHistory();
