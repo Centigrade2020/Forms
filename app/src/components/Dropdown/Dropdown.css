@@ -1,6 +1,8 @@
 .Dropdown p {
   color: var(--light);
   position: relative;
+  user-select: none;
+  cursor: pointer;
 }
 
 .display {
@@ -10,6 +12,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transition: all 200ms ease-in-out;
+  cursor: pointer;
+}
+
+.display:hover {
+  border: 1px solid var(--primary);
 }
 .options {
   width: 200px;
@@ -32,4 +40,8 @@
 
 .options-active {
   display: block;
+}
+
+.display-active {
+  border: 1px solid var(--primary);
 }
