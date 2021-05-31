@@ -1,0 +1,33 @@
+.profile-tab {
+  position: absolute;
+  right: 7.5%;
+  top: 10vh;
+  width: 200px;
+  height: 100px;
+  background-color: var(--dark2);
+  border: 1px solid var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.profile-tab button {
+  padding: 5px 10px;
+  /* padding: 10px 15px; */
+  background-color: var(--transparent);
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  font-weight: lighter;
+  transition: color 200ms ease-in-out, background-color 200ms ease-in-out;
+  cursor: pointer;
+}
+
+.profile-tab button:hover {
+  background-color: var(--primary);
+  color: var(--dark2);
+}
+
+.profile-tab-active {
+  display: flex;
+}

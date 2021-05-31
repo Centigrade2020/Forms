@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
   useHistory,
@@ -28,17 +28,15 @@ function App() {
   }, [authUser, authResolved]);
 
   return (
-    <Router>
-      <Switch>
-        <Route path="/login" component={Login} />
-        <Route path="/signup" component={Signup} />
-        <>
-          <NavBar />
-          <Route exact path="/" component={Home} />
-          <Route path="/user/createform" component={CreateForm} />
-        </>
-      </Switch>
-    </Router>
+    <Switch>
+      <Route path="/login" component={Login} />
+      <Route path="/signup" component={Signup} />
+      <>
+        <NavBar />
+        <Route exact path="/" component={Home} />
+        <Route path="/user/createform" component={CreateForm} />
+      </>
+    </Switch>
   );
 }
 
