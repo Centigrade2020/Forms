@@ -9,6 +9,7 @@ label {
 }
 
 .error-container .error {
+  font-weight: 100;
   font-size: 0.8rem;
   color: var(--error);
 }
