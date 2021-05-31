@@ -29,7 +29,6 @@ function CreateForm() {
         </button>
       ) : null}
 
-      <br />
       <button
         className="add-field-button"
         onClick={() => setaddfield(addfield + 1)}

@@ -54,9 +54,14 @@
   background-color: var(--primary);
   color: var(--dark2);
 }
+
+.auth-link-container {
+  color: var(--light);
+}
 .auth-link {
   padding-left: 8px;
   transition: color 200ms ease-in-out;
+  color: var(--light);
 }
 
 .auth-link:hover {

@@ -10,6 +10,31 @@ function Signup() {
   const history = useHistory();
   const [serverError, setServerError] = useState("");
 
+  const signup = ({ email, username, password }, { setSubmitting }) => {
+    fb.auth
+      .createUserWithEmailAndPassword(email, password)
+      .then((res) => {
+        if (res?.user?.uid) {
+          fb.firestore.collection("users").doc(res.user.uid).set({
+            UserName: username,
+            UserId: res.user.uid,
+          });
+        } else {
+          setServerError("Trouble signing up. Try again.");
+        }
+      })
+      .catch((err) => {
+        if (err.code === "auth/email-already-in-use") {
+          setServerError("Email already exists");
+        } else {
+          setServerError("Trouble signing up. Try again");
+        }
+      })
+      .finally(() => {
+        setSubmitting(false);
+      });
+  };
+
   return (
     <div className="Signup">
       <h2 className="logo auth-logo">Forms</h2>
@@ -17,9 +42,7 @@ function Signup() {
         <div className="auth-form-container">
           <h1>Sign up</h1>
           <Formik
-            onSubmit={() => {
-              console.log("Submitted");
-            }}
+            onSubmit={signup}
             validateOnMount={true}
             initialValues={initialValues}
             validationSchema={validationSchema}
