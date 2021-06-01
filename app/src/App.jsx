@@ -13,8 +13,8 @@ function App() {
   const authResolved = useResolved(authUser);
 
   useEffect(() => {
-    if (authResolved) {
-      history.push(!!authUser ? "/" : "login");
+    if (authResolved) {   
+      history.push(!!authUser ? "/" : "../login");
     }
   }, [authResolved, authUser, history]);
 
