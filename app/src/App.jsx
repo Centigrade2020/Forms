@@ -13,8 +13,8 @@ function App() {
   const authResolved = useResolved(authUser);
 
   useEffect(() => {
-    if (authResolved) {   
-      history.push(!!authUser ? "/" : "../login");
+    if (authResolved) {
+      history.push(!!authUser ? "/" : "login");
     }
   }, [authResolved, authUser, history]);
 
@@ -25,7 +25,7 @@ function App() {
       <>
         <NavBar />
         <Route exact path="/" component={Home} />
-        <Route path="/user/createform" component={CreateForm} />
+        <Route path="/createform" component={CreateForm} />
       </>
     </Switch>
   );

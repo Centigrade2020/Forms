@@ -14,9 +14,7 @@ function CreateForm() {
   return (
     <div className="CreateForm">
       <input type="text" className="form-name" placeholder="Form name" />
-      <div className="fields">
-        <FormField />
-      </div>
+      <div className="fields">{/* <FormField /> */}</div>
       {[...Array(addfield)].map((i) => (
         <AddedElement key={i} />
       ))}

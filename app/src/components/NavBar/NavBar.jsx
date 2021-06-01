@@ -14,7 +14,7 @@ function NavBar() {
         <h1
           className="logo"
           onClick={() => {
-            history.push("");
+            history.push("/");
           }}
         >
           Forms

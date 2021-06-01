@@ -11,7 +11,7 @@ function Home() {
         <div
           className="create-form template"
           onClick={() => {
-            history.push("/user/createform");
+            history.push("/createform");
           }}
         >
           <Symbols.Plus fill="#66fcf1" size="32" />

@@ -19,6 +19,14 @@
   --error: #ff0000;
 }
 
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+}
+
 body {
   width: 100%;
   min-height: 100vh;
