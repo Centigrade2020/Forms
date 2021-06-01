@@ -4,6 +4,7 @@ import "./ProfileTab.css";
 function ProfileTab() {
   const signout = () => {
     fb.auth.signOut();
+    localStorage.clear();
   };
 
   return (
