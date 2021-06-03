@@ -1,4 +1,4 @@
-import React, { useState, createClass } from "react";
+import React, { useState } from "react";
 import Symbols from "../Symbols";
 // import Dropdown from "../Dropdown";
 import "./FormField.css";
