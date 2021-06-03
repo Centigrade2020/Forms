@@ -1,5 +1,5 @@
 .form-field {
-  margin: 20px 0;
+  margin-top: 20px;
   background-color: var(--dark2);
   padding: 15px;
 }
@@ -17,6 +17,7 @@
   border: none;
   border-bottom: 1px solid var(--light);
   outline: none;
+  transition: all 200ms ease-in-out;
 }
 
 .form-field .wrapper > input:focus {

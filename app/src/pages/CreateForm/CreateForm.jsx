@@ -1,19 +1,28 @@
-import { useDebugValue, useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 import Symbols from "../../components/Symbols";
 import FormField from "../../components/FormField";
 import fb from "../../services/firebase";
 import "./CreateForm.css";
 
 function CreateForm() {
-  const location = useLocation();
-
   const [formData, setFormData] = useState([]);
-  const [formSize, setFormSize] = useState(0);
+  const [num, setNum] = useState(0);
 
   var userData = fb.firestore
     .collection("users")
     .doc(localStorage.getItem("userId"));
+
+  var userAdditionalData = fb.firestore
+    .collection("users")
+    .doc(localStorage.getItem("userId"))
+    .collection("AdditionalData");
+
+  userAdditionalData
+    .doc("FieldNumber")
+    .get()
+    .then((doc) => {
+      setNum(doc.data().Number);
+    });
 
   useEffect(() => {
     var li = [];
@@ -25,23 +34,26 @@ function CreateForm() {
         docs.forEach((doc) => {
           li.push(doc.data());
         });
-        setFormSize(docs.size);
         setFormData(li);
       });
-  }, [formSize]);
+  }, [userData, num]);
 
   const addField = () => {
     userData
       .collection("CurrentForm")
-      .doc("Field" + (formSize + 1))
+      .doc("Field" + num)
       .set({
-        FieldName: "Field" + (formSize + 1),
+        FieldName: "Field" + num,
+        FieldType: "Text",
         Question: "Enter your question",
         Options: {},
       });
-    console.log(formSize);
 
-    window.location.reload();
+    userAdditionalData.doc("FieldNumber").update({
+      Number: num + 1,
+    });
+
+    console.log(num);
   };
 
   return (
@@ -57,11 +69,15 @@ function CreateForm() {
           />
         ))}
       </div>
-
-      <button className="add-field-button" onClick={addField}>
-        <Symbols.Plus size="20" fill="#66fcf1" />
-        <span>Add field</span>
-      </button>
+      <div className="buttons-container">
+        <button className="add-field-button" onClick={addField}>
+          <Symbols.Plus size="20" fill="#66fcf1" />
+          <span>Add field</span>
+        </button>
+        <button className="publish-form-button">
+          <span>Publish Form</span>
+        </button>
+      </div>
     </div>
   );
 }

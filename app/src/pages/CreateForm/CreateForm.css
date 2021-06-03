@@ -26,68 +26,50 @@
   border-bottom: 2px solid var(--primary);
 }
 
-/* .fields {
-  width: 50%;
-  height: 200px;
+.buttons-container {
   display: flex;
-  flex-direction: column;
-  background-color: var(--dark2);
-  margin-top: 30px;
-  margin-left: 100px;
-}
-span {
-  display: inline;
+  width: 100%;
+  justify-content: space-between;
 }
 
-#question_field {
-  float: left;
+.buttons-container > button {
+  margin: 20px 0;
   background-color: var(--dark2);
-  width: 35%;
-  margin: 15px 0 0 30px;
-  border: none;
-  border-bottom: 2px solid var(--light);
-}
-
-#dropdown {
-  width: 20%;
-  float: right;
-  outline: none;
-  margin-top: 15px;
-  margin-right: 100px;
-  background-color: var(--dark2);
-  border: none;
-  border-bottom: 2px solid var(--light);
-  color: var(--primary);
-}
-
-#answer_input {
-  outline: none;
-  background-color: var(--dark2);
-  width: 30%;
-  border: none;
-  border-bottom: 2px solid var(--light);
-  margin: 40px 0 0 30px;
-} */
-
-.add-field-button {
-  background-color: var(--dark2);
+  width: 49%;
   padding: 15px;
   border: 1px solid var(--dark2);
-  transition: border 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
 }
 
-.add-field-button > * {
+.buttons-container > button > * {
   margin: 0 5px;
   color: var(--primary);
 }
-.add-field-button:hover {
+.buttons-container > button:hover {
   border: 1px solid var(--primary);
 }
 
-.add-field-button:active {
+.buttons-container > button:active {
   background-color: var(--dark);
+}
+
+.buttons-container > .publish-form-button {
+  background-color: var(--primary);
+  transition: all 0ms ease-in-out;
+}
+
+.buttons-container > .publish-form-button > * {
+  color: var(--dark2);
+}
+
+.buttons-container > .publish-form-button:hover {
+  border: 1px solid var(--dark2);
+}
+
+.buttons-container > .publish-form-button:active {
+  background-color: var(--primary2);
 }

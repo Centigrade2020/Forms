@@ -15,11 +15,11 @@ function App() {
 
   useEffect(() => {
     if (authResolved) {
-      if (location.pathname != "/createform") {
+      if (location.pathname !== "/createform") {
         history.push(!!authUser ? "/" : "login");
       }
     }
-  }, [authResolved, authUser, history]);
+  }, [authResolved, authUser, history, location.pathname]);
 
   return (
     <Switch>

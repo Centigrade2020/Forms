@@ -1,10 +1,13 @@
+import { useHistory } from "react-router-dom";
 import fb from "../../services/firebase";
 import "./ProfileTab.css";
 
 function ProfileTab() {
+  const history = useHistory();
   const signout = () => {
     fb.auth.signOut();
     localStorage.clear();
+    history.push("login");
   };
 
   return (

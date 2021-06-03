@@ -1,26 +1,34 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Symbols from "../Symbols";
-// import Dropdown from "../Dropdown";
 import "./FormField.css";
 import fb from "../../services/firebase";
-// import "../Dropdown/Dropdown.css";
 
 const FormField = ({ type, question, keyName }) => {
-  const opts = ["Text", "Multiple Choice", "Check Box", "Dropdown"];
-  const [fieldType, setFormType] = useState(type);
+  // const opts = ["Text", "Multiple Choice", "Check Box", "Dropdown"];
+  const [fieldType, setFieldType] = useState(type);
 
-  const questionOnChange = (keyName, value) => {
-    var fieldData = fb.firestore
-      .collection("users")
-      .doc(localStorage.getItem("userId"))
-      .collection("CurrentForm")
-      .doc(keyName);
+  var fieldData = fb.firestore
+    .collection("users")
+    .doc(localStorage.getItem("userId"))
+    .collection("CurrentForm");
 
-    console.log(keyName);
-    fieldData.update({
+  const questionOnChange = (value) => {
+    fieldData.doc(keyName).update({
       Question: value,
     });
   };
+
+  const fieldTypeOnClick = (value) => {
+    setFieldType(value);
+    fieldData.doc(keyName).update({
+      FieldType: value,
+    });
+  };
+
+  // const deleteField = () => {
+  //   console.log(keyName);
+  //   fieldData.doc(keyName).delete();
+  // };
 
   return (
     <div className="form-field" key={keyName}>
@@ -28,14 +36,30 @@ const FormField = ({ type, question, keyName }) => {
         <input
           type="text"
           defaultValue={question}
-          onChange={(e) => questionOnChange(keyName, e.target.value)}
+          onChange={(e) => questionOnChange(e.target.value)}
         />
-        {/* <select className="Dropdown" id="Dropdown" name="form-type">
+        <p>{fieldType}</p>
+        <select
+          className="Dropdown"
+          id="Dropdown"
+          name="form-type"
+          onChange={(e) => fieldTypeOnClick(e.target.value)}
+        >
           <option value="Text">Text</option>
           <option value="Multiple Choice">Multiple Choice</option>
           <option value="Check Box">Check Box</option>
           <option value="Dropdown">Dropdown</option>
-        </select> */}
+        </select>
+
+        <div
+          className="delete-field"
+          onClick={() => {
+            console.log(keyName);
+            fieldData.doc(keyName).delete();
+          }}
+        >
+          <Symbols.Trash fill="#c5c6c7" size="32" />
+        </div>
       </div>
     </div>
   );
