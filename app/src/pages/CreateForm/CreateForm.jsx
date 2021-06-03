@@ -14,8 +14,12 @@ function CreateForm() {
   return (
     <div className="CreateForm">
       <input type="text" className="form-name" placeholder="Form name" />
-      <div className="fields">{/* <FormField /> */}</div>
-      {[...Array(addfield)].map((i) => (
+      <div className="fields">
+        <FormField />
+        <FormField />
+        <FormField />
+      </div>
+      {/* {[...Array(addfield)].map((i) => (
         <AddedElement key={i} />
       ))}
       {addfield > 0 ? (
@@ -25,7 +29,7 @@ function CreateForm() {
         >
           Remove field
         </button>
-      ) : null}
+      ) : null} */}
 
       <button
         className="add-field-button"

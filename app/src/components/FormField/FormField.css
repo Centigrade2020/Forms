@@ -22,3 +22,8 @@
 .form-field .wrapper > input:focus {
   border-bottom: 1px solid var(--primary);
 }
+
+.Dropdown {
+  background-color: var(--dark2);
+  color: var(--light);
+}

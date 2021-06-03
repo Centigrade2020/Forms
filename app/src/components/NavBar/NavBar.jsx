@@ -11,12 +11,14 @@ function NavBar() {
   const history = useHistory();
 
   useEffect(() => {
-    const uid = localStorage.getItem("userId");
-    var docRef = fb.firestore.collection("users").doc(uid);
+    if (!!localStorage.getItem("userId")) {
+      const uid = localStorage.getItem("userId");
+      var docRef = fb.firestore.collection("users").doc(uid);
 
-    docRef.get().then((doc) => {
-      setUsername(doc.data().UserName);
-    });
+      docRef.get().then((doc) => {
+        setUsername(doc.data().UserName);
+      });
+    }
   }, []);
 
   return (
