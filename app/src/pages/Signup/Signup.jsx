@@ -19,6 +19,15 @@ function Signup() {
             UserName: username,
             UserId: res.user.uid,
           });
+
+          fb.firestore
+            .collection("users")
+            .doc(res.user.uid)
+            .collection("AdditionalData")
+            .doc("FieldNumber")
+            .set({
+              Number: 0,
+            });
         } else {
           setServerError("Trouble signing up. Try again.");
         }
@@ -32,6 +41,7 @@ function Signup() {
       })
       .finally(() => {
         setSubmitting(false);
+        localStorage.setItem("userId", fb.auth.currentUser?.uid);
       });
   };
 

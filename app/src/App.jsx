@@ -19,7 +19,7 @@ function App() {
         history.push(!!authUser ? "/" : "login");
       }
     }
-  }, [authResolved, authUser, history, location.pathname]);
+  }, [authResolved, authUser, history]);
 
   return (
     <Switch>
