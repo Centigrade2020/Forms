@@ -13,6 +13,7 @@ const FormField = ({ type, question, keyName }) => {
     { value: "Dropdown", label: "Dropdown" },
   ];
   const [fieldType, setFieldType] = useState(type);
+  const [count,setcount] = useState(0)
 
   var fieldData = fb.firestore
     .collection("users")
@@ -24,6 +25,8 @@ const FormField = ({ type, question, keyName }) => {
       Question: value,
     });
   };
+
+
 
   const fieldTypeOnClick = (value) => {
     setFieldType(value);
@@ -56,11 +59,63 @@ const FormField = ({ type, question, keyName }) => {
         
         <div className="answer-container">
           {(()=>{
-            
-            if(fieldType==="Text"){
-              return(<input type="text" />)
-            }
-          }) () }
+             if(fieldType=="Text"){
+               return(
+                 <input type="text" placeholder='Your answer...' autoComplete='off'/>
+              )       
+             }
+             else if(fieldType=="Check Box"){
+               return(
+                 <>
+                 <input type="checkbox" name="checkbox" />
+                 {[...Array(count)].map((_,i)=><input type="checkbox"  name="checkbox" key={i} />)}
+                
+                 
+                 <button className="add-field-button" onClick={()=>setcount(count+1)}>
+          <Symbols.Plus size="20" fill="#66fcf1" />
+          <span>Add <button></button></span>
+        </button>
+                </>
+               )
+             }
+    
+    else if(fieldType=="Multiple Choice"){
+              return(
+                <>
+                <label><input type="radio" name="radio"/>radio</label>
+                {[...Array(count)].map((_,i)=><input type="radio"  name="radio" key={i} />)}
+                
+                 
+                 <button className="add-field-button" onClick={()=>setcount(count+1)}>
+          <Symbols.Plus size="20" fill="#66fcf1" />
+          <span>Add <button></button></span>
+        </button>
+                </>
+                
+              )
+             }
+            //  else if(fieldType=="Dropdown"){
+            //   return(
+            //     <>
+            //     <Select
+            //     options={options}
+            //     value={options.find((obj) => obj.value === fieldType)}
+            //     onChange={(e) => fieldTypeOnClick(e.value)}
+            //     components={{
+            //       IndicatorSeparator: () => null,
+            //     }}
+            //     styles={selectStyle}
+
+            //     />
+            //     <input type="text" />
+            //    </>
+            //   )
+            //  }
+             
+             
+
+
+          }) ()}
         </div>
 
         <div
