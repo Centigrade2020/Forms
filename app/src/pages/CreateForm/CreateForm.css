@@ -35,7 +35,7 @@
 .buttons-container > button {
   margin: 20px 0;
   background-color: var(--dark3);
-  width: 49%;
+  /* width: 49%; */
   padding: 15px;
   border: 1px solid var(--dark3);
   transition: all 200ms ease-in-out;
@@ -43,6 +43,11 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+}
+
+.add-field-button,
+.publish-form-button {
+  width: 49%;
 }
 
 .buttons-container > button > * {
