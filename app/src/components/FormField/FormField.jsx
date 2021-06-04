@@ -1,10 +1,16 @@
 import React, { useState } from "react";
+import Select from "react-select";
+import fb from "../../services/firebase";
 import Symbols from "../Symbols";
 import "./FormField.css";
-import fb from "../../services/firebase";
 
 const FormField = ({ type, question, keyName }) => {
-  // const opts = ["Text", "Multiple Choice", "Check Box", "Dropdown"];
+  const options = [
+    { value: "Text", label: "Text" },
+    { value: "Multiple Choice", label: "Multiple Choice" },
+    { value: "Check Box", label: "Check Box" },
+    { value: "Dropdown", label: "Dropdown" },
+  ];
   const [fieldType, setFieldType] = useState(type);
 
   var fieldData = fb.firestore
@@ -25,11 +31,6 @@ const FormField = ({ type, question, keyName }) => {
     });
   };
 
-  // const deleteField = () => {
-  //   console.log(keyName);
-  //   fieldData.doc(keyName).delete();
-  // };
-
   return (
     <div className="form-field" key={keyName}>
       <div className="wrapper">
@@ -39,17 +40,13 @@ const FormField = ({ type, question, keyName }) => {
           onChange={(e) => questionOnChange(e.target.value)}
         />
         <p>{fieldType}</p>
-        <select
-          className="Dropdown"
-          id="Dropdown"
-          name="form-type"
-          onChange={(e) => fieldTypeOnClick(e.target.value)}
-        >
-          <option value="Text">Text</option>
-          <option value="Multiple Choice">Multiple Choice</option>
-          <option value="Check Box">Check Box</option>
-          <option value="Dropdown">Dropdown</option>
-        </select>
+        <div className="custom-select">
+          <Select
+            options={options}
+            value={options.find((obj) => obj.value === fieldType)}
+            onChange={(e) => fieldTypeOnClick(e.value)}
+          />
+        </div>
 
         <div
           className="delete-field"
