@@ -38,3 +38,10 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.Trash {
+  transition: fill 200ms ease-in-out;
+}
+.Trash:hover {
+  fill: red;
+}

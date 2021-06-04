@@ -38,8 +38,8 @@ nav {
 
 .profile .profile-name {
   color: var(--light);
-  margin-right: 10px;
-  margin-top: 10px;
+  margin-right: 5px;
+  margin-top: 12px;
   transition: all 200ms ease-in-out;
 }
 
