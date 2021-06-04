@@ -41,7 +41,7 @@ function NavBar() {
           }}
         >
           <p className="profile-name">{username}</p>
-          <Symbols.Profile fill="#c5c6c7" size="40" />
+          <Symbols.Profile fill="#c5c6c7" size="32" />
         </div>
         <ProfileTab />
       </nav>

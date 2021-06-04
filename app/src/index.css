@@ -18,6 +18,7 @@
   --white: #fff;
   --black: #000;
   --error: #ff0000;
+  --shadow: #0b0c108a;
 }
 
 *::-webkit-scrollbar {
