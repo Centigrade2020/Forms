@@ -8,7 +8,10 @@ const initialValues = {
 };
 
 const validationSchema = yup.object().shape({
-  username: yup.string().required("Required"),
+  username: yup
+    .string()
+    .required("Required")
+    .min(3, "Must atleast be 3 characters"),
   email: yup.string().required("Required").email("Invalid Email"),
   password: yup
     .string()
