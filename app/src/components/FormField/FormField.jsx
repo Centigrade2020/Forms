@@ -13,24 +13,35 @@ const FormField = ({ type, question, keyName }) => {
   ];
   const [fieldType, setFieldType] = useState(type);
 
-  // const customStyles = {
-  //   option: (provided, state) => ({
-  //     ...provided,
-  //     borderBottom: "1px solid pink",
-  //     color: state.isSelected ? "red" : "blue",
-  //     padding: 20,
-  //   }),
-  //   control: () => ({
-  //     // none of react-select's styles are passed to <Control />
-  //     width: 200,
-  //   }),
-  //   singleValue: (provided, state) => {
-  //     const opacity = state.isDisabled ? 0.5 : 1;
-  //     const transition = "opacity 300ms";
-
-  //     return { ...provided, opacity, transition };
-  //   },
-  // };
+  const selectStyle = {
+    option: () => ({
+      borderBottom: "1px solid #c5c6c730",
+      margin: "0px",
+      color: "#66fcf1",
+      padding: "5px",
+      borderRadius: "0px",
+      backgroundColor: "#1b232c",
+      fontWeight: "100",
+      fontSize: "18px",
+    }),
+    control: () => ({
+      width: "150px",
+      borderRadius: "0px",
+      display: "flex",
+      backgroundColor: "#1b232c",
+    }),
+    singleValue: () => ({
+      borderRadius: "0px",
+      backgroundColor: "#1b232c",
+    }),
+    menu: (provided, state) => {
+      return {
+        padding: "0px",
+        margin: "0px",
+        ...provided,
+      };
+    },
+  };
 
   var fieldData = fb.firestore
     .collection("users")
@@ -64,36 +75,7 @@ const FormField = ({ type, question, keyName }) => {
             options={options}
             value={options.find((obj) => obj.value === fieldType)}
             onChange={(e) => fieldTypeOnClick(e.value)}
-            styles={{
-              option: () => ({
-                borderBottom: "1px solid #c5c6c730",
-                margin: "0px",
-                color: "#66fcf1",
-                padding: "5px",
-                borderRadius: "0px",
-                backgroundColor: "#1b232c",
-                fontWeight: "100",
-                fontSize: "18px",
-              }),
-              control: () => ({
-                width: "150px",
-                borderRadius: "0px",
-                display: "flex",
-                backgroundColor: "#1b232c",
-              }),
-              singleValue: () => ({
-                borderRadius: "0px",
-                backgroundColor: "#1b232c",
-              }),
-              menu: (provided, state) => {
-                return {
-                  padding: "0px",
-                  margin: "0px",
-                  fontSize: "18px",
-                  ...provided,
-                };
-              },
-            }}
+            styles={selectStyle}
           />
         </div>
 
