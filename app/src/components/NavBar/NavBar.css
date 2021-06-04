@@ -38,11 +38,14 @@ nav {
 
 .profile .profile-name {
   color: var(--light);
-  margin-right: 5px;
-  margin-top: 12px;
+  margin-top: 10px;
   transition: all 200ms ease-in-out;
 }
 
 .profile:hover .profile-name {
   color: var(--primary);
+}
+
+.profile:hover .Profile {
+  fill: var(--primary);
 }

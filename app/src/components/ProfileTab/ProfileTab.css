@@ -10,6 +10,7 @@
   align-items: center;
   justify-content: center;
   display: none;
+  box-shadow: 2px 2px 5px var(--dark);
 }
 
 .profile-tab button {
@@ -32,4 +33,8 @@
 
 .Profile {
   transition: all 200ms ease-in-out;
+}
+
+.Profile:hover {
+  fill: var(--primary);
 }
