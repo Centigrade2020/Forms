@@ -53,7 +53,15 @@ const FormField = ({ type, question, keyName }) => {
       </div>
 
       <div className="form-field-row2">
-        <div className="answer-container">{fieldType}</div>
+        
+        <div className="answer-container">
+          {(()=>{
+            
+            if(fieldType==="Text"){
+              return(<input type="text" />)
+            }
+          }) () }
+        </div>
 
         <div
           className="delete-field"

@@ -39,9 +39,12 @@
   align-items: center;
 }
 
-.Trash {
-  transition: fill 200ms ease-in-out;
-}
-.Trash:hover {
-  fill: red;
+input {
+  padding: 10px;
+  width: 400px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--light);
+  outline: none;
+  transition: all 200ms ease-in-out;
 }
