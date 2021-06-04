@@ -1,16 +1,27 @@
 .form-field {
   margin-top: 20px;
   background-color: var(--dark2);
-  padding: 15px;
+  padding: 10px;
 }
 
-.form-field .wrapper {
+.form-field > input:focus {
+  border-bottom: 1px solid var(--primary);
+}
+
+.Dropdown {
+  background-color: var(--dark2);
+  color: var(--light);
+}
+
+.form-field-row1 {
+  margin: 20px 10px;
+  padding-right: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.form-field .wrapper input {
+.form-field-row1 input {
   padding: 10px;
   width: 400px;
   background: transparent;
@@ -20,11 +31,10 @@
   transition: all 200ms ease-in-out;
 }
 
-.form-field .wrapper > input:focus {
-  border-bottom: 1px solid var(--primary);
-}
-
-.Dropdown {
-  background-color: var(--dark2);
-  color: var(--light);
+.form-field-row2 {
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
 }
