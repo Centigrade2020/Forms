@@ -14,33 +14,69 @@ const FormField = ({ type, question, keyName }) => {
   const [fieldType, setFieldType] = useState(type);
 
   const selectStyle = {
-    option: () => ({
-      borderBottom: "1px solid #c5c6c730",
-      margin: "0px",
+    container: (base) => ({
+      ...base,
+      width: "140px",
       color: "#66fcf1",
-      padding: "5px",
-      borderRadius: "0px",
-      backgroundColor: "#1b232c",
-      fontWeight: "100",
-      fontSize: "18px",
     }),
-    control: () => ({
-      width: "150px",
-      borderRadius: "0px",
-      display: "flex",
-      backgroundColor: "#1b232c",
-    }),
-    singleValue: () => ({
-      borderRadius: "0px",
-      backgroundColor: "#1b232c",
-    }),
-    menu: (provided, state) => {
+    control: (base, state) => {
+      var border;
+
+      if (state.isFocused) {
+        border = "1px solid #66fcf1";
+      } else {
+        border = "1px solid #c5c6c7";
+      }
+
       return {
-        padding: "0px",
-        margin: "0px",
-        ...provided,
+        width: "inherit",
+        padding: "5px",
+        borderRadius: "0px",
+        backgroundColor: "#28333f",
+        boxShadow: "none",
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        color: "#66fcf1",
+        transition: "border 200ms ease-in-out",
       };
     },
+    valueContainer: (base) => ({
+      ...base,
+      color: "#66fcf1",
+      fontSize: "12px",
+      border: null,
+      "&:placeholder": {
+        color: "#66fcf1",
+      },
+    }),
+    dropdownIndicator: (base) => ({
+      ...base,
+      color: "black",
+    }),
+    menu: (base) => ({
+      ...base,
+      width: "150px",
+      padding: "0 10px",
+      borderRadius: "0px",
+      backgroundColor: "#28333f",
+    }),
+    menuList: (base) => ({ ...base, width: "130px", padding: "0px" }),
+    option: (base, state) => {
+      var color = state.isSelected ? "#66fcf1" : "#c5c6c7";
+      return {
+        ...base,
+        width: "inherit",
+        fontSize: "12px",
+        padding: "10px",
+        backgroundColor: "#28333f",
+        color,
+      };
+    },
+    placeholder: (base) => ({
+      ...base,
+      color: "red",
+    }),
   };
 
   var fieldData = fb.firestore
@@ -70,11 +106,14 @@ const FormField = ({ type, question, keyName }) => {
           onChange={(e) => questionOnChange(e.target.value)}
         />
         {/* <p>{fieldType}</p> */}
-        <div className="custom-select">
+        <div className="react-select-container">
           <Select
             options={options}
             value={options.find((obj) => obj.value === fieldType)}
             onChange={(e) => fieldTypeOnClick(e.value)}
+            components={{
+              IndicatorSeparator: () => null,
+            }}
             styles={selectStyle}
           />
         </div>

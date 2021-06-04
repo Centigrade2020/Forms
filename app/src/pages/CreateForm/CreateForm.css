@@ -34,10 +34,10 @@
 
 .buttons-container > button {
   margin: 20px 0;
-  background-color: var(--dark2);
+  background-color: var(--dark3);
   width: 49%;
   padding: 15px;
-  border: 1px solid var(--dark2);
+  border: 1px solid var(--dark3);
   transition: all 200ms ease-in-out;
   display: flex;
   align-items: center;
@@ -63,11 +63,11 @@
 }
 
 .buttons-container > .publish-form-button > * {
-  color: var(--dark2);
+  color: var(--dark3);
 }
 
 .buttons-container > .publish-form-button:hover {
-  border: 1px solid var(--dark2);
+  border: 1px solid var(--dark3);
 }
 
 .buttons-container > .publish-form-button:active {
