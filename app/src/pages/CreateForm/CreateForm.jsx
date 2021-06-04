@@ -45,7 +45,7 @@ function CreateForm() {
       .set({
         FieldName: "Field" + num,
         FieldType: "Text",
-        Question: "Enter your question",
+        Question: "",
         Options: {},
       });
 

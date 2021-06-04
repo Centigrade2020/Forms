@@ -39,6 +39,7 @@ const FormField = ({ type, question, keyName }) => {
           type="text"
           defaultValue={question}
           onChange={(e) => questionOnChange(e.target.value)}
+          placeholder="Enter the question"
         />
         <Select
           options={options}
