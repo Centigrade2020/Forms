@@ -70,7 +70,7 @@ const FormField = ({ type, question, keyName }) => {
             fieldData.doc(keyName).delete();
           }}
         >
-          <Symbols.Trash  size="32" />
+          <Symbols.Trash fill="#c5c6c7" size="32" />
         </div>
       </div>
     </div>
