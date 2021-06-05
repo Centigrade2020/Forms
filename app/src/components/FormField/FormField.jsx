@@ -13,6 +13,7 @@ const FormField = ({ type, question, keyName }) => {
     { value: "Dropdown", label: "Dropdown" },
   ];
   const [fieldType, setFieldType] = useState(type);
+  const [count,setcount] = useState(0)
 
   const [num, setNum] = useState(1);
   const [fieldOptions, setFieldOptions] = useState({
@@ -57,6 +58,8 @@ const FormField = ({ type, question, keyName }) => {
       Question: value,
     });
   };
+
+
 
   const fieldTypeOnClick = (value) => {
     setFieldType(value);
@@ -108,7 +111,72 @@ const FormField = ({ type, question, keyName }) => {
       </div>
 
       <div className="form-field-row2">
+<<<<<<< HEAD
         <div className="answer-container">{renderAnswerContainer()}</div>
+=======
+        
+        <div className="answer-container">
+          {(()=>{
+             if(fieldType=="Text"){
+               return(
+                 <input type="text" placeholder='Your answer...' autoComplete='off'/>
+              )       
+             }
+             else if(fieldType=="Check Box"){
+               return(
+                 <>
+                 <input type="checkbox" name="checkbox" />
+                 {[...Array(count)].map((_,i)=><input type="checkbox"  name="checkbox" key={i} />)}
+                
+                 
+                 <button className="add-field-button" onClick={()=>setcount(count+1)}>
+          <Symbols.Plus size="20" fill="#66fcf1" />
+          <span>Add <button></button></span>
+        </button>
+                </>
+               )
+             }
+    
+    else if(fieldType=="Multiple Choice"){
+              return(
+                <>
+                <label><input type="radio" name="radio"/>radio</label>
+                {[...Array(count)].map((_,i)=><input type="radio"  name="radio" key={i} />)}
+                
+                 
+                 <button className="add-field-button" onClick={()=>setcount(count+1)}>
+          <Symbols.Plus size="20" fill="#66fcf1" />
+          <span>Add <button></button></span>
+        </button>
+                </>
+                
+              )
+             }
+            //  else if(fieldType=="Dropdown"){
+            //   return(
+            //     <>
+            //     <Select
+            //     options={options}
+            //     value={options.find((obj) => obj.value === fieldType)}
+            //     onChange={(e) => fieldTypeOnClick(e.value)}
+            //     components={{
+            //       IndicatorSeparator: () => null,
+            //     }}
+            //     styles={selectStyle}
+
+            //     />
+            //     <input type="text" />
+            //    </>
+            //   )
+            //  }
+             
+             
+
+
+          }) ()}
+        </div>
+
+>>>>>>> 5fadd354b80c56fe98dc208bfc371ea1f891d6dc
         <div
           className="delete-field"
           onClick={() => {
