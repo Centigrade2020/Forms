@@ -32,10 +32,13 @@ function CreateForm() {
       .get()
       .then((docs) => {
         docs.forEach((doc) => {
-          li.push(doc.data());
+          setFormData((a) => [...a, doc.data()]);
+          // li.push(doc.data());
         });
-        setFormData(li);
       });
+    // .then(() => {
+    //   setFormData(li);
+    // });
   }, [userData, num]);
 
   const addField = () => {
