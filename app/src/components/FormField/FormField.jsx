@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Select from "react-select";
 import fb from "../../services/firebase";
 import Symbols from "../Symbols";
@@ -13,48 +13,7 @@ const FormField = ({ type, question, keyName }) => {
     { value: "Dropdown", label: "Dropdown" },
   ];
   const [fieldType, setFieldType] = useState(type);
-  // const [count, setcount] = useState(0);
-
-  const [num, setNum] = useState(1);
-  const [fieldOptions, setFieldOptions] = useState({
-    Option1: "",
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFieldOptions((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
-
-  var userData = fb.firestore
-    .collection("users")
-    .doc(localStorage.getItem("userId"));
-
-  var userAdditionalData = fb.firestore
-    .collection("users")
-    .doc(localStorage.getItem("userId"))
-    .collection("AdditionalData");
-
-  // userAdditionalData
-  //   .doc("OptionNumber")
-  //   .get()
-  //   .then((doc) => {
-  //     setNum(doc.data().Number);
-  //   });
-
-  // const updateFieldOptions = () => {
-  //   userData
-  //     .collection("CurrentForm")
-  //     .doc(keyName)
-  //     .get()
-  //     .then((doc) => {
-  //       if (doc.exists) {
-  //         setFieldOptions(doc.data().Options);
-  //       }
-  //     });
-  // };
+  const [count,setcount] = useState(0)
 
   var fieldData = fb.firestore
     .collection("users")
@@ -67,35 +26,14 @@ const FormField = ({ type, question, keyName }) => {
     });
   };
 
+
+
   const fieldTypeOnClick = (value) => {
     setFieldType(value);
     fieldData.doc(keyName).update({
       FieldType: value,
     });
   };
-
-  const addFieldOption = () => {
-    setNum(num + 1);
-    // setFieldOptions((a) => [...a, ""]);
-    console.log(num, fieldOptions);
-  };
-
-  function renderAnswerContainer() {
-    return fieldType === "Text" ? (
-      <input type="text" placeholder="Answer goes here" readOnly />
-    ) : (
-      <>
-        {Object.keys(fieldOptions).map((a) => (
-          <input name={a} key={a}>
-            {a}
-          </input>
-        ))}
-        <button className="add-option-button" onClick={addFieldOption}>
-          Add option
-        </button>
-      </>
-    );
-  }
 
   return (
     <div className="form-field" key={keyName}>
@@ -118,59 +56,67 @@ const FormField = ({ type, question, keyName }) => {
       </div>
 
       <div className="form-field-row2">
-        <div className="answer-container">{renderAnswerContainer()}</div>
-        {/* <div className="answer-container">
-          {(() => {
-            if (fieldType == "Text") {
-              return (
-                <input
-                  type="text"
-                  placeholder="Your answer..."
-                  autoComplete="off"
-                />
-              );
-            } else if (fieldType == "Check Box") {
-              return (
-                <>
-                  <input type="checkbox" name="checkbox" />
-                  {[...Array(count)].map((_, i) => (
-                    <input type="checkbox" name="checkbox" key={i} />
-                  ))}
-
-                  <button
-                    className="add-field-button"
-                    onClick={() => setcount(count + 1)}
-                  >
-                    <Symbols.Plus size="20" fill="#66fcf1" />
-                    <span>
-                      Add <button></button>
-                    </span>
-                  </button>
+        
+        <div className="answer-container">
+          {(()=>{
+             if(fieldType==="Text"){
+               return(
+                 <input type="text" placeholder='Your answer...' autoComplete='off'/>
+              )       
+             }
+             else if(fieldType==="Check Box"){
+               return(
+                 <>
+                 <input type="checkbox" name="checkbox" />
+                 <input type="text" id='checkbox' placeholder='Enter your answer' />
+                 {[...Array(count)].map((_,i)=>
+                 <>
+                 <input type="checkbox"  name="checkbox" key={i}/>
+                 <input type="text" id='checkbox' placeholder='Enter your answer' key={i} />
+                 </>
+                 )}
+                
+                 
+                 <button className="add-field-button" onClick={()=>setcount(count+1)}>
+          <Symbols.Plus size="20" fill="#66fcf1" />
+          <span>Add <button></button></span>
+        </button>
                 </>
-              );
-            } else if (fieldType == "Multiple Choice") {
-              return (
+               )
+             }
+    
+    else if(fieldType==="Multiple Choice"){
+              return(
                 <>
-                  <label>
-                    <input type="radio" name="radio" />
-                    radio
-                  </label>
-                  {[...Array(count)].map((_, i) => (
-                    <input type="radio" name="radio" key={i} />
-                  ))}
-
-                  <button
-                    className="add-field-button"
-                    onClick={() => setcount(count + 1)}
-                  >
-                    <Symbols.Plus size="20" fill="#66fcf1" />
-                    <span>
-                      Add <button></button>
-                    </span>
-                  </button>
+                <input type="radio"  name="radio"/>
+                <input type="text" id='choice' placeholder='Enter your choice' />
+                {[...Array(count)].map((_,i)=>
+                <>
+                <input type="radio"  name="radio" key={i} />
+                <input type="text" id='choice' placeholder='Enter your choice' key={i} />
                 </>
-              );
-            }
+                )}
+                
+                 
+                 <button className="add-field-button" onClick={()=>setcount(count+1)}>
+          <Symbols.Plus size="20" fill="#66fcf1" />
+          <span>Add <button></button></span>
+        </button>
+                </>
+                
+              )
+             }
+
+            //  else if(fieldType==="Dropdown"){
+            //    return  (
+            //      <>
+            //           <input type="text" id='dropdown' />
+            //           <button className="add-field-button" onClick={()=>setcount(count+1)}>
+            //          <Symbols.Plus size="20" fill="#66fcf1" />
+            //         <span>Add</span> </button>
+            //      </>
+            //    )
+            //  }
             //  else if(fieldType=="Dropdown"){
             //   return(
             //     <>
@@ -188,8 +134,12 @@ const FormField = ({ type, question, keyName }) => {
             //    </>
             //   )
             //  }
-          })()}
-        </div> */}
+             
+             
+
+
+          }) ()}
+        </div>
 
         <div
           className="delete-field"
